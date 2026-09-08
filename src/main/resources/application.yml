@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  ai:
+    dashscope:
+      api-key: sk-ws-H.PMLDRII.d8xA.MEQCIGiYVyFIJgD2UIZ-SeuTN2d9ZsIdieZ7L_kRRW85Z4K-AiALfRFzcWyvJvE8S7ehNKinvDv9BkCYKOjB6BIBQIg0eg
+      chat:
+        options:
+          model: qwen-plus
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/elder?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: momosamadaisiki.1
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatis官方提供的控制台打印日志
+  type-aliases-package: com.situ.elder.pojo
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)

@@ -1,0 +1,293 @@
+/* =============================================================
+   智慧养老管理系统 - 全局主题设计系统
+   主色：疗愈青绿（健康、安心、信赖）
+   辅色：深空蓝侧边栏（专业、沉稳）
+   ============================================================= */
+@import './base.css';
+
+/* ---------- 字体 ---------- */
+:root {
+  font-family:
+    'Inter',
+    'PingFang SC',
+    'HarmonyOS Sans SC',
+    'Microsoft YaHei',
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    sans-serif;
+}
+
+/* ---------- Element Plus 主题变量覆盖 ---------- */
+:root {
+  /* 主色 青绿 */
+  --el-color-primary: #14b8a6;
+  --el-color-primary-light-3: #5acdc1;
+  --el-color-primary-light-5: #89dbd2;
+  --el-color-primary-light-7: #b8eae4;
+  --el-color-primary-light-8: #d0f1ed;
+  --el-color-primary-light-9: #e8f8f6;
+  --el-color-primary-dark-2: #109385;
+
+  /* 功能色微调 */
+  --el-color-success: #22c55e;
+  --el-color-warning: #f59e0b;
+  --el-color-danger: #f43f5e;
+  --el-color-error: #f43f5e;
+  --el-color-info: #64748b;
+
+  /* 圆角 */
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+  --el-border-radius-round: 20px;
+
+  /* 边框色（更柔和） */
+  --el-border-color: #e2e8f0;
+  --el-border-color-light: #eef2f7;
+  --el-border-color-lighter: #f1f5f9;
+
+  /* 文字色 */
+  --el-text-color-primary: #1e293b;
+  --el-text-color-regular: #475569;
+  --el-text-color-secondary: #64748b;
+
+  /* 填充色 */
+  --el-fill-color-light: #f5f7fa;
+  --el-fill-color-lighter: #fafbfc;
+
+  /* 自定义设计变量 */
+  --app-bg: #f1f5f9;
+  --app-sidebar-bg: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  --app-card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --app-card-shadow-hover: 0 4px 8px rgba(15, 23, 42, 0.06), 0 12px 28px rgba(15, 23, 42, 0.1);
+  --app-gradient: linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%);
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--el-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- 滚动条美化 ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =============================================================
+   组件级美化
+   ============================================================= */
+
+/* ---------- 按钮 ---------- */
+.el-button {
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.el-button--primary {
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.35);
+}
+.el-button--primary:hover {
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.45);
+  transform: translateY(-1px);
+}
+.el-button--primary:active {
+  transform: translateY(0);
+}
+
+/* ---------- 卡片：所有列表页的容器 ---------- */
+.el-card {
+  border-radius: 14px;
+  border: 1px solid var(--el-border-color-light);
+  box-shadow: var(--app-card-shadow);
+  transition: box-shadow 0.25s ease;
+}
+.el-card:hover {
+  box-shadow: var(--app-card-shadow-hover);
+}
+.el-card__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--el-border-color-lighter);
+}
+.el-card__body {
+  padding: 20px;
+}
+
+/* 卡片头部按钮区（各列表页 .header） */
+.el-card__header .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.el-card__header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+}
+
+.el-card__header .page-title::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #14b8a6 0%, #0ea5e9 100%);
+}
+
+.el-card__header .page-header .header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: auto;
+}
+
+/* 卡片内搜索表单：与表格之间留出呼吸感 */
+.el-card__body > .el-form--inline {
+  padding: 16px 16px 4px;
+  margin-bottom: 16px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+}
+
+/* ---------- 表格 ---------- */
+.el-table {
+  --el-table-border-color: var(--el-border-color-lighter);
+  --el-table-header-bg-color: #f8fafc;
+  --el-table-header-text-color: #475569;
+  --el-table-row-hover-bg-color: #f0fdfa;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.el-table th.el-table__cell {
+  font-weight: 600;
+  height: 48px;
+}
+.el-table .el-table__cell {
+  padding: 10px 0;
+}
+
+/* ---------- 分页 ---------- */
+.el-pagination {
+  --el-pagination-button-bg-color: transparent;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+.el-pagination .el-pager li,
+.el-pagination .btn-prev,
+.el-pagination .btn-next {
+  border-radius: 8px;
+}
+.el-pagination .el-pager li.is-active {
+  background: var(--el-color-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- 弹窗 ---------- */
+.el-dialog {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.2);
+  padding: 0;
+  overflow: hidden;
+}
+.el-dialog__header {
+  padding: 18px 24px;
+  margin-right: 0;
+  border-bottom: 1px solid var(--el-border-color-lighter);
+  background: linear-gradient(90deg, #f0fdfa 0%, #ffffff 70%);
+}
+.el-dialog__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--el-text-color-primary);
+}
+.el-dialog__body {
+  padding: 24px;
+  max-height: 62vh;
+  overflow-y: auto;
+}
+.el-dialog__footer {
+  padding: 14px 24px 20px;
+  border-top: 1px solid var(--el-border-color-lighter);
+}
+
+/* ---------- 表单 ---------- */
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused {
+  box-shadow: 0 0 0 1px var(--el-color-primary) inset, 0 0 0 3px rgba(20, 184, 166, 0.15) !important;
+}
+.el-form-item__label {
+  font-weight: 500;
+  color: var(--el-text-color-regular);
+}
+
+/* ---------- 标签 / 徽章 ---------- */
+.el-tag {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* ---------- 消息提示 ---------- */
+.el-message {
+  border-radius: 10px;
+}
+.el-message-box {
+  border-radius: 14px;
+}
+
+/* ---------- 下拉菜单 ---------- */
+.el-dropdown__popper,
+.el-select__popper {
+  border-radius: 10px;
+}
+.el-dropdown-menu__item:not(.is-disabled):hover,
+.el-dropdown-menu__item:not(.is-disabled):focus {
+  background: var(--el-color-primary-light-9);
+  color: var(--el-color-primary-dark-2);
+}
+
+/* ---------- 日期选择器 ---------- */
+.el-date-editor--datetimerange {
+  --el-date-editor-daterange-width: 340px;
+}
+
+/* ---------- 窄屏适配 ---------- */
+@media (max-width: 768px) {
+  .el-card__body {
+    padding: 14px;
+  }
+}
